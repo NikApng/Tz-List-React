@@ -1,3 +1,4 @@
+import Index from '../pages'
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-
+    <Index></Index>
     </>
   );
 }
