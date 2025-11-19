@@ -1,16 +1,17 @@
 import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
-import * as crypto from "node:crypto";
+
 
 type Todo = {
     id: string
     title: string
+    description?: string
     done: boolean
 }
 
 type TodosState = {
     items: Todo[]
 }
-const initialState = {
+const initialState:TodosState = {
     items: [],
 }
 
@@ -18,10 +19,11 @@ const todosSlice = createSlice({
     name: 'tasks',
     initialState,
     reducers: {
-        addTodo: (state, action: PayloadAction<{ title: string }>) => {
+        addTodo: (state, action: PayloadAction<{ title: string, description?: string }>) => {
             const newTodo: Todo = {
-                id: Date.now(),
+                id: Date.now().toString(),
                 title: action.payload.title,
+                description: action.payload.description ?? '',
                 done: false,
             }
             state.items.push(newTodo)
