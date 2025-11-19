@@ -2,8 +2,10 @@ import React, { useEffect } from 'react'
 
 import Button from '../../shared/ui/Button.tsx'
 import useLocalStorage from '../lib/hooks/useLocalStorage.ts'
+import Moon from "../../../public/icons/theme/Moon.tsx";
+import Sun from "../../../public/icons/theme/Sun.tsx";
 
-function ThemeButton(props) {
+function ThemeButton() {
   const [theme, setTheme] = useLocalStorage('theme', 'light')
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light')
@@ -20,8 +22,8 @@ function ThemeButton(props) {
   }, [theme])
 
   return (
-    <Button onClick={toggleTheme}>
-      {theme === 'light' ? 'светлая' : 'темная'}
+    <Button  onClick={toggleTheme}>
+      {theme === 'light' ? <Sun/> : <Moon/>}
     </Button>
   )
 }
