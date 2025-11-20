@@ -1,74 +1,85 @@
-# React + TypeScript + Vite
+🧩 TZ-List v2 — Task Manager (React + TypeScript + Redux Toolkit)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современный таск-менеджер с досками, колонками и задачами.
+Проект создан как практическая работа по React, TypeScript и работе с состоянием через Redux Toolkit.
 
-Currently, two official plugins are available:
+Это вторая версия проекта.
+Первая была на чистом JavaScript, сейчас приложение полностью переписано на современный стек.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Функциональность
 
-## React Compiler
+Создание задач
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Редактирование задач
 
-## Expanding the ESLint configuration
+Удаление задач
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Перетаскивание задач между колонками (todo / in-progress / done) (если уже есть или планируется)
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+Темная/светлая тема
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Поиск по задачам
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+Сохранение состояния в localStorage
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Модальные окна для создания/редактирования
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+Удобная архитектура компонентов
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
-# Tz-List-React
+🛠️ Стек технологий
+
+React 18
+
+TypeScript
+
+Redux Toolkit
+
+Tailwind CSS
+
+Vite
+
+Работа с локальным состоянием + глобальным стейтом
+
+Семантичные компоненты и модульная структура
+
+📂 Структура проекта
+src/
+  components/
+  features/
+  store/
+  types/
+  ui/
+  utils/
+  App.tsx
+  main.tsx
+
+▶️ Запуск проекта
+npm install
+npm run dev
+
+🌐 Демо
+
+(добавь ссылку на Vercel после деплоя)
+
+📸 Скриншоты
+
+(вставь 1–3 скрина UI, это сильно повышает уровень репозитория)
+
+🧱 История проекта
+
+Проект начался как простой to-do список на JavaScript (v1),
+но был полностью переработан:
+
+добавлен TypeScript
+
+добавлен Redux Toolkit
+
+улучшена архитектура
+
+реализовано сохранение данных
+
+добавлены модалки
+
+расширен функционал
+
+улучшен UI через Tailwind
