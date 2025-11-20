@@ -6,6 +6,7 @@ type Todo = {
     title: string
     description?: string
     done: boolean
+    board: []
 }
 
 type TodosState = {
@@ -25,6 +26,7 @@ const todosSlice = createSlice({
                 title: action.payload.title,
                 description: action.payload.description ?? '',
                 done: false,
+                board: boardsSlice
             }
             state.items.push(newTodo)
         },
