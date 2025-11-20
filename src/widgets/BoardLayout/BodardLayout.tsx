@@ -9,17 +9,25 @@ type BoardLayoutProps = {
 
 function BoardLayout({ activeTodoId }: BoardLayoutProps) {
   const dispatch = useDispatch()
-
-  const board = useSelector((state: any) => {
-    activeTodoId ? state.board.byTodoId[activeTodoId] : null
-  })
+  const activeTodo = useSelector((state: any) =>
+    activeTodoId ? state.todos.items.find((t: any) => t.id === activeTodoId) : null
+  )
+  const board = useSelector((state: any) => activeTodoId ? state.board.byTodoId[activeTodoId] : null)
 
   return (
     <div className="h-full flex flex-col gap-4">
+      {activeTodo && (
+        <div className="mb-4">
+          <h2 className="text-lg font-semibold">{activeTodo.title}</h2>
+          {activeTodo.description && (
+            <p className="text-sm text-neutral-500">{activeTodo.description}</p>
+          )}
+        </div>
+      )}
 
       {board ? (
         <div className="flex gap-4">
-          {/* Колонка To Do */}
+
           <div className="flex-1">
             <h3 className="font-semibold mb-2 text-sm">To Do</h3>
             <ul className="flex flex-col gap-2">
