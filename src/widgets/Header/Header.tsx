@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({onCreateTaskClick}) => {
                     <Button
                         variant="primary"
                         className="hidden sm:inline-flex h-9 rounded-lg px-3 text-xs sm:text-sm"
-                        onClick={onCreateTaskClick}
+                        onClick={()=>onCreateTaskClick()}
                     >
                         + Новая задача
                     </Button>

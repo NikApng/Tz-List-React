@@ -1,5 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { data } from 'autoprefixer'
+import { createSlice } from '@reduxjs/toolkit'
 
 type BoardTask = {
   id: string
@@ -60,3 +59,6 @@ const boardSlice = createSlice({
 
   },
 })
+
+export const { addBoard } = boardSlice.actions
+export default boardSlice.reducer
