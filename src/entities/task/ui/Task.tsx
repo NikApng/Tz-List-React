@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../../../shared/ui/Button.tsx'
 import { deleteTodo } from '../../../store/Slice/todosSlice.ts'
+import {removeBoard} from '../../../store/board/boardsSlice.ts'
 import { useDispatch, useSelector } from 'react-redux'
 
 type OpenBoardTaskProps = {
@@ -38,6 +39,7 @@ function Task({ onOpenBoard }: OpenBoardTaskProps) {
             onClick={(e) => {
               e.stopPropagation()
               dispatch(deleteTodo({ id: i.id }))
+              dispatch(removeBoard({todoId: i.id}))
             }}
             variant="danger"
           >

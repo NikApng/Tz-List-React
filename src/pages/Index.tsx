@@ -18,8 +18,8 @@ function Index() {
       setError('Введите хотя бы один символ')
       return
     }
-    if (title.trim().length >= 12) {
-      setError('Слишком много символов макс: 12')
+    if (title.trim().length >= 20) {
+      setError('Слишком много символов макс: 20')
       return
     }
     setError(null)

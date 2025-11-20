@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice} from '@reduxjs/toolkit'
 
 type BoardTask = {
   id: string
@@ -56,9 +56,13 @@ const boardSlice = createSlice({
 
       board.columns[columnId].push(newTask)
     },
+    removeBoard: (state, action: PayloadAction<{ todoId: string }>) => {
+
+     delete state.byTodoId[action.payload.todoId]
+    },
 
   },
 })
 
-export const { addBoard } = boardSlice.actions
+export const { addBoard, removeBoard } = boardSlice.actions
 export default boardSlice.reducer
