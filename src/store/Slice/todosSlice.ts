@@ -12,11 +12,13 @@ type TodosState = {
   items: Todo[]
 }
 const initialState: TodosState = {
-  items: [],
+  items: JSON.parse(localStorage.getItem('task') ?? '[]') as Todo[],
 }
+
 
 const todosSlice = createSlice({
   name: 'tasks',
+
   initialState,
   reducers: {
     addTodo: (state, action: PayloadAction<{ title: string, description?: string }>) => {

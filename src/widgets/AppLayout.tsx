@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import Header from './Header/Header'
 import BoardLayout from './BoardLayout/BodardLayout.tsx'
 import { useSelector } from 'react-redux'
@@ -6,11 +6,15 @@ import Task from '../entities/task/ui/Task.tsx'
 
 interface AppLayoutProps {
   onCreateTaskClick: () => void
-
 }
 
 function AppLayout({ onCreateTaskClick }: AppLayoutProps) {
-  const todos = useSelector((state: any) => state.todos.items)
+  const todos = useSelector((state) => state.todos.items)
+
+  useEffect(() => {
+    localStorage.setItem('task', JSON.stringify(todos))
+  }, [todos])
+
   const [activeID, setActiveId] = useState<string | null>(null)
 
   return (
